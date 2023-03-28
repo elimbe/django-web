@@ -38,7 +38,7 @@ def handleLogin(request):
             messages.success(request,"Login success") 
             return redirect('/')
         else:
-            messages.error(request,'Invalid credentials')
+            messages.error(request,'Invalid credentials try again')
 
     return render(request,'login.html')
 def handleLogout(request):
