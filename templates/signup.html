@@ -10,9 +10,13 @@ line {% block body %}
       <br />
       <br />
       <h3 class="text-light bg-dark text-center p-3">Sign Up Here</h3>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Holy guacamole!</strong> You should check in on some of those
-        fields below.
+      {% for message in messages %}
+
+      <div
+        class="alert alert-{{message.tags}} alert-dismissible fade show"
+        role="alert"
+      >
+        <strong>{{message}}</strong>
         <button
           type="button"
           class="btn-close"
@@ -20,6 +24,7 @@ line {% block body %}
           aria-label="Close"
         ></button>
       </div>
+      {% endfor %}
 
       <div class="card p-3">
         <form action="/auth/signup/" method="post">
